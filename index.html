@@ -1,0 +1,1873 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECサイトにおけるマーケティング戦略フレームワーク</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
+        
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a56db;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            border-bottom: 3px solid #1a56db;
+            padding-bottom: 10px;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #2563eb;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            border-left: 5px solid #2563eb;
+            padding-left: 10px;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #3b82f6;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+        
+        h4 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #4b5563;
+            margin-top: 1.2rem;
+            margin-bottom: 0.6rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        .section-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-top: 5px solid #3b82f6;
+        }
+        
+        .strategy-box {
+            background-color: #f3f4f6;
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .strategy-header {
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .strategy-header i {
+            margin-right: 10px;
+            color: #3b82f6;
+        }
+        
+        .kpi-box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .kpi-item {
+            background-color: #e0f2fe;
+            border-radius: 6px;
+            padding: 12px;
+            flex: 1;
+            min-width: 150px;
+            text-align: center;
+            border-left: 4px solid #3b82f6;
+        }
+        
+        .kpi-number {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1e40af;
+            margin-bottom: 5px;
+        }
+        
+        .kpi-label {
+            font-size: 0.9rem;
+            color: #4b5563;
+        }
+        
+        .checklist {
+            background-color: #f8fafc;
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+        
+        .checklist-item i {
+            color: #10b981;
+            margin-right: 10px;
+            margin-top: 4px;
+        }
+        
+        .process-flow {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .process-step {
+            flex: 1;
+            min-width: 200px;
+            background-color: #dbeafe;
+            border-radius: 6px;
+            padding: 15px;
+            position: relative;
+            text-align: center;
+        }
+        
+        .process-step:not(:last-child)::after {
+            content: "→";
+            position: absolute;
+            right: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            color: #3b82f6;
+            z-index: 1;
+        }
+        
+        .matrix-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .matrix-cell {
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+        }
+        
+        .matrix-cell-1 {
+            background-color: #fee2e2;
+        }
+        
+        .matrix-cell-2 {
+            background-color: #fef3c7;
+        }
+        
+        .matrix-cell-3 {
+            background-color: #d1fae5;
+        }
+        
+        .matrix-cell-4 {
+            background-color: #bfdbfe;
+        }
+        
+        .template-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .template-table th, .template-table td {
+            border: 1px solid #e5e7eb;
+            padding: 12px;
+        }
+        
+        .template-table th {
+            background-color: #f3f4f6;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .diagram-section {
+            margin: 25px 0;
+            text-align: center;
+        }
+        
+        .diagram-box {
+            display: inline-block;
+            padding: 15px 25px;
+            border-radius: 6px;
+            margin: 10px;
+            background-color: #dbeafe;
+            color: #1e40af;
+            font-weight: 500;
+            min-width: 180px;
+        }
+        
+        .highlight-box {
+            background-color: #fff7ed;
+            border-left: 5px solid #fb923c;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        .highlight-title {
+            font-weight: 600;
+            color: #c2410c;
+            margin-bottom: 10px;
+        }
+        
+        @media print {
+            body {
+                background-color: white;
+            }
+            
+            .container {
+                max-width: 100%;
+                box-shadow: none;
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ECサイトにおけるマーケティング戦略フレームワーク</h1>
+        
+        <!-- はじめに - フレームワークの全体像 -->
+        <section class="section-card">
+            <h2>はじめに | フレームワークの全体像</h2>
+            
+            <div class="strategy-box">
+                <div class="strategy-header">
+                    <i class="fas fa-chart-line"></i>3C分析をベースに「流入」→「転換率」→「リピート」の3段階で再整理して戦略策定
+                </div>
+                <p>「3C分析」 × 「ファネル戦略」 × 「モール特化施策」を組み合わせて最適なマーケティング戦略を構築する。まずはマーケティングを行う商材、自治体のポジションや強み弱み、競合との関係性や市場の状況などを整理しておくことが重要となる。</p>
+            </div>
+            
+            <div class="flex flex-wrap gap-4 mb-8">
+                <div class="flex-1 min-w-[250px] bg-blue-50 p-4 rounded-lg">
+                    <h3 class="text-center mb-2 text-blue-700">自社</h3>
+                    <ul class="list-disc list-inside">
+                        <li>商品の特徴、商品力</li>
+                        <li>販売実績の推移</li>
+                        <li>レビュー、お気に入り獲得状況</li>
+                        <li>広告費、リソース状況</li>
+                    </ul>
+                </div>
+                
+                <div class="flex-1 min-w-[250px] bg-green-50 p-4 rounded-lg">
+                    <h3 class="text-center mb-2 text-green-700">市場・顧客</h3>
+                    <ul class="list-disc list-inside">
+                        <li>購買傾向</li>
+                        <li>ニーズ</li>
+                        <li>リピート率</li>
+                        <li>市場規模</li>
+                        <li>市場状況</li>
+                    </ul>
+                </div>
+                
+                <div class="flex-1 min-w-[250px] bg-red-50 p-4 rounded-lg">
+                    <h3 class="text-center mb-2 text-red-700">競合</h3>
+                    <ul class="list-disc list-inside">
+                        <li>競争環境</li>
+                        <li>価格帯</li>
+                        <li>レビュー、お気に入り獲得状況</li>
+                        <li>広告費、リソース状況</li>
+                        <li>キーワード取得状況</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="flex flex-wrap gap-4">
+                <div class="flex-1 min-w-[220px] bg-blue-600 text-white p-3 rounded-lg text-center">
+                    <h4 class="font-bold text-white">PLAN</h4>
+                    <div class="mt-2 mb-2 bg-white text-blue-800 rounded py-1">アクセス戦略</div>
+                    <div class="mt-2 mb-2 bg-white text-blue-800 rounded py-1">3C分析</div>
+                    <div class="mt-2 mb-2 bg-white text-blue-800 rounded py-1">転換率戦略</div>
+                    <div class="mt-2 mb-2 bg-white text-blue-800 rounded py-1">リピート戦略</div>
+                    <p class="text-sm mt-3 px-2">
+                        自社×競合×市場の交差点で「うちはどこに強みがあるか」「どの部分が弱いか」「どの顧客層を狙うのが適切か」を明確にする。
+                    </p>
+                </div>
+                
+                <div class="flex-1 min-w-[220px] bg-green-600 text-white p-3 rounded-lg text-center">
+                    <h4 class="font-bold text-white">DO</h4>
+                    <div class="mt-2 mb-2 bg-white text-green-800 rounded py-1">Attention</div>
+                    <div class="mt-2 mb-2 bg-white text-green-800 rounded py-1">Interest</div>
+                    <div class="mt-2 mb-2 bg-white text-green-800 rounded py-1">Search</div>
+                    <div class="mt-2 mb-2 bg-white text-green-800 rounded py-1">Action</div>
+                    <div class="mt-2 mb-2 bg-white text-green-800 rounded py-1">Share</div>
+                    <p class="text-sm mt-3 px-2">
+                        ファネルごとに「どう伸ばすか・どんな施策を使うか」方針が定まり、3Cをベースに戦略を立案できる。
+                    </p>
+                </div>
+                
+                <div class="flex-1 min-w-[220px] bg-yellow-600 text-white p-3 rounded-lg text-center">
+                    <h4 class="font-bold text-white">CHECK</h4>
+                    <p class="text-sm mt-3 px-2">
+                        実行した施策の効果を検証し、「どの段階にボトルネックがあり、どの指標が改善余地が大きいか」を発見する。
+                    </p>
+                </div>
+                
+                <div class="flex-1 min-w-[220px] bg-red-600 text-white p-3 rounded-lg text-center">
+                    <h4 class="font-bold text-white">ACTION</h4>
+                    <div class="mt-2 mb-2 bg-white text-red-800 rounded py-1">優先度マトリクス</div>
+                    <p class="text-sm mt-3 px-2">
+                        CHECKで見つかった課題に対し、複数の改善案を出し、それを優先度づけし、次のPLANに落とし込む。
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- フレームワークの全体像 -->
+        <section class="section-card">
+            <h2>フレームワークの全体像</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-blue-50 p-4 rounded-lg">
+                    <h3 class="text-blue-800"><i class="fas fa-clipboard-list mr-2"></i>01 PLAN</h3>
+                    <ol class="list-decimal list-inside ml-4">
+                        <li class="font-semibold">アクセス戦略
+                            <ol class="list-decimal list-inside ml-5">
+                                <li>SEO(検索上位対策)</li>
+                                <li>広告運用(RPPなど)</li>
+                                <li>外部流入施策(SNS・外部広告)</li>
+                            </ol>
+                        </li>
+                        <li class="font-semibold mt-2">転換率戦略
+                            <ol class="list-decimal list-inside ml-5">
+                                <li>商品ページ最適化</li>
+                                <li>レビューキャンペーン</li>
+                                <li>商品施策</li>
+                            </ol>
+                        </li>
+                        <li class="font-semibold mt-2">リピート・LTV戦略
+                            <ol class="list-decimal list-inside ml-5">
+                                <li>定期便・セット販売</li>
+                                <li>ブランドフォロー</li>
+                                <li>メルマガ</li>
+                            </ol>
+                        </li>
+                    </ol>
+                </div>
+                
+                <div class="bg-green-50 p-4 rounded-lg">
+                    <h3 class="text-green-800"><i class="fas fa-play-circle mr-2"></i>02 DO</h3>
+                    <p>立案した戦略を効果的に実行するためのプロセス</p>
+                    <ul class="list-disc list-inside ml-4 mt-2">
+                        <li>各施策の詳細な実行計画を策定</li>
+                        <li>関係者との役割分担と進捗管理</li>
+                        <li>リソース配分を最適化</li>
+                        <li>実行スケジュールの明確化</li>
+                        <li>施策実施結果のリアルタイムモニタリング</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-yellow-50 p-4 rounded-lg">
+                    <h3 class="text-yellow-800"><i class="fas fa-chart-bar mr-2"></i>03 CHECK</h3>
+                    <ol class="list-decimal list-inside ml-4">
+                        <li class="font-semibold">効果検証
+                            <ol class="list-decimal list-inside ml-5">
+                                <li>PDCAを回すために</li>
+                            </ol>
+                        </li>
+                    </ol>
+                    <p class="mt-2">各指標を通じた施策効果の把握と検証</p>
+                </div>
+                
+                <div class="bg-red-50 p-4 rounded-lg">
+                    <h3 class="text-red-800"><i class="fas fa-redo-alt mr-2"></i>04 ACTION</h3>
+                    <p>検証結果に基づき、次サイクルの改善計画を立案</p>
+                    <ul class="list-disc list-inside ml-4 mt-2">
+                        <li>課題の優先順位づけ</li>
+                        <li>次期施策への反映方法</li>
+                        <li>継続的な改善サイクルの確立</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- PLAN - アクセス戦略 -->
+        <section class="section-card">
+            <h2><i class="fas fa-clipboard-list mr-2 text-blue-600"></i>PLAN - アクセス戦略</h2>
+            
+            <!-- SEO対策 -->
+            <div class="bg-white rounded-lg shadow-md p-5 mb-6 border-l-4 border-blue-500">
+                <h3 class="text-xl font-bold text-blue-700 mb-3">1.1 アクセス戦略 | SEO対策</h3>
+                
+                <div class="highlight-box">
+                    <div class="highlight-title"><i class="fas fa-lightbulb mr-2"></i>検索順位が売上に直結するため、検索最適化(Search Engine Optimization)が必須</div>
+                    <p>モール毎のSEOアルゴリズムを理解し、各モールの特徴に応じたSEO対策を行う必要がある。ただし効果が出るまで一定期間かかるため、中長期的な施策として、一定期間ごとに見直しを行うことが望ましい。</p>
+                </div>
+                
+                <div class="mt-6">
+                    <h4 class="font-semibold text-blue-800 mb-3">主要KPI</h4>
+                    <div class="kpi-box">
+                        <div class="kpi-item">
+                            <div class="kpi-number">01</div>
+                            <div class="kpi-label">検索順位</div>
+                        </div>
+                        <div class="kpi-item">
+                            <div class="kpi-number">02</div>
+                            <div class="kpi-label">アクセス数</div>
+                        </div>
+                        <div class="kpi-item">
+                            <div class="kpi-number">03</div>
+                            <div class="kpi-label">コンバージョン率</div>
+                        </div>
+                        <div class="kpi-item">
+                            <div class="kpi-number">04</div>
+                            <div class="kpi-label">レビュー・お気に入り数</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                    <div>
+                        <h4 class="font-semibold text-blue-800 mb-3">施策チェックリスト</h4>
+                        <div class="checklist">
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>タグID、ジャンルIDは正しく設定されているか？</div>
+                            </div>
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>ターゲットキーワードでの順位を取れているか？</div>
+                            </div>
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>サジェストキーワードでの順位を取れているか？</div>
+                            </div>
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>「アクセス・流入分析」→「楽天サーチ」で対策漏れのチェック</div>
+                            </div>
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>競合が使っているキーワードのチェック</div>
+                            </div>
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>トレンドになっているキーワードは入っているか</div>
+                            </div>
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>RPP広告と連動しているか</div>
+                            </div>
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>説明文は充実しているか</div>
+                            </div>
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>誤情報を入れていないか</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold text-blue-800 mb-3">重要な情報から入力していく</h4>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="mb-4">
+                                <div class="text-blue-700 font-semibold">01 | 固有の商品名</div>
+                                <div class="text-gray-600 text-sm ml-4">（例：ふんわりショコラケーキ）</div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="text-blue-700 font-semibold">02 | 商品のジャンルを示すビッグワード</div>
+                                <div class="text-gray-600 text-sm ml-4">（例：ふんわりショコラケーキ│スイーツ ギフト）</div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="text-blue-700 font-semibold">03 | 商品特徴で外せない内容</div>
+                                <div class="text-gray-600 text-sm ml-4">（例：ふんわりショコラケーキ│スイーツ ギフト 高級チョコレート使用 職人手作り 送料無料）</div>
+                            </div>
+                            <div class="text-xs text-gray-500 mt-2">※厳密にはキーワードの順番が検索順位に影響するわけではないが、上記の流れで考えていくと考えやすい</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 広告運用 -->
+            <div class="bg-white rounded-lg shadow-md p-5 mb-6 border-l-4 border-blue-500">
+                <h3 class="text-xl font-bold text-blue-700 mb-3">1.2 アクセス戦略 | 広告運用(RPPなど)</h3>
+                
+                <div class="highlight-box">
+                    <div class="highlight-title"><i class="fas fa-ad mr-2"></i>RPP広告など検索連動型広告でSEOを補完しながら売上の積み上げ</div>
+                    <p>SEO施策を行うだけでは数多くある検索結果の中から選ばれることも難しい。検索連動型を併用することで、補完的にキーワードの実績を積極に積み上げることができる。また、新規登録の品であれば、最初の売り上げを作るきっかけになることもある。</p>
+                </div>
+                
+                <div class="mt-6">
+                    <h4 class="font-semibold text-blue-800 mb-3">主要KPI</h4>
+                    <div class="kpi-box">
+                        <div class="kpi-item">
+                            <div class="kpi-number">01</div>
+                            <div class="kpi-label">検索順位</div>
+                        </div>
+                        <div class="kpi-item">
+                            <div class="kpi-number">02</div>
+                            <div class="kpi-label">ROAS</div>
+                        </div>
+                        <div class="kpi-item">
+                            <div class="kpi-number">03</div>
+                            <div class="kpi-label">CVR(広告経由)</div>
+                        </div>
+                        <div class="kpi-item">
+                            <div class="kpi-number">04</div>
+                            <div class="kpi-label">クリック数、表示回数</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-6">
+                    <h4 class="font-semibold text-blue-800 mb-3">基本戦略</h4>
+                    
+                    <div class="bg-gray-50 p-4 rounded-lg mb-4">
+                        <div class="text-blue-700 font-semibold"><i class="fas fa-angle-right mr-2"></i>01 | 売れている品をもっと売る</div>
+                        <p class="text-gray-700 ml-6 mt-2">柱返礼品を主軸に、ターゲットキーワードの検索順位を落とさないよう、SEOで決めたキーワードに対しかけ続ける。商品数は商材やページの実績にもよるため、一度多めにかけたのち、除外していく方法が効率的。</p>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-lg mb-4">
+                        <div class="text-blue-700 font-semibold"><i class="fas fa-angle-right mr-2"></i>02 | パフォーマンスの悪いキーワードを切るかどうか</div>
+                        <p class="text-gray-700 ml-6 mt-2">戦略や予算の所在によもよるが、基本的にはパフォーマンスの悪いキーワードは削除していく。ただし、検索順位を維持するため、パフォーマンスが悪くてもかけ続けるケースもある。</p>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-lg mb-4">
+                        <div class="text-blue-700 font-semibold"><i class="fas fa-angle-right mr-2"></i>03 | キーワード/キャンペーンの使い分け</div>
+                        <p class="text-gray-700 ml-6 mt-2">ページが育つと、キーワードをかけなくてもある程度クリック数が稼げるようになる。ROASを向上させるのであればキーワードを外したり、商品自体を除外することも考えられる。</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h5 class="font-semibold text-center text-blue-700 mb-2">目指すROAS(目安)</h5>
+                            <div class="border-t border-blue-200 pt-2">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-gray-700">自治体拠出</span>
+                                    <span class="font-bold text-blue-800">1,000%程度</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-700">SP体拠出</span>
+                                    <span class="font-bold text-blue-800">2,000%程度</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 外部流入施策 -->
+            <div class="bg-white rounded-lg shadow-md p-5 mb-6 border-l-4 border-blue-500">
+                <h3 class="text-xl font-bold text-blue-700 mb-3">1.3 アクセス戦略 | 外部流入施策(SNS・外部広告など)</h3>
+                
+                <div class="highlight-box">
+                    <div class="highlight-title"><i class="fas fa-external-link-alt mr-2"></i>モール内だけでなくモール外からの流入も獲得</div>
+                    <p>楽天市場において、約7割の流入は楽天市場内の検索からの流入です。楽天市場内でレッドオーシャン化している商材を取り扱っている場合や、寄附のさらなる最大化のためには、モール外からの流入も考える必要がある。</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-blue-800 mb-3 text-center">SNS/インフルエンサー広告</h4>
+                        
+                        <div class="mb-4">
+                            <div class="font-semibold text-gray-700 mb-1">メリット</div>
+                            <p class="text-sm text-gray-600">費用をかけずに始めることができ、UGCの活用や、シティプロモーションとしての活用も可能</p>
+                        </div>
+                        
+                        <div>
+                            <div class="font-semibold text-gray-700 mb-1">デメリット</div>
+                            <p class="text-sm text-gray-600">中長期的なコンテンツの作成や寄附者とのコミュニケーションなど、リソースがかかる、広告やキャンペーンをする際には費用が掛かる</p>
+                            <p class="text-sm text-gray-600 mt-2">指定制度に則って運用する必要があり、インフルエンサーが返礼品を紹介するような広告はNG。コンテンツマーケや、ファン醸成のためには有効なツールであるが、投稿内容、企画、キャンペーンなど戦略立てて運用していく必要がある。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-green-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-green-800 mb-3 text-center">ディスプレイ広告/その他外部広告</h4>
+                        
+                        <p class="text-sm text-gray-600 mb-4">GDNなどの外部ディスプレイ広告やWeb広告にとどまらず、新聞、雑誌、マスメディアなど多くの広告媒体が存在している。しかし、どれほど売り上げに対し効果があったか測定がしずらいものが多く、効果測定が難しい。目的を定め、何のためにその広告を実施するか戦略立てて取捨選択する必要がある。</p>
+                        
+                        <div class="bg-white p-3 rounded-lg shadow-sm">
+                            <h5 class="font-semibold text-gray-700 mb-2">プレスリリース</h5>
+                            <p class="text-sm text-gray-600">プレスリリースは自治体から公式に発表されるものであり、権威性のあるコンテンツとして信頼性を担保することができる。コンテンツの内容が興味を引くものであれば、そこから新聞やテレビなどの取材に発展することも。また、Yahooニュースなど大きなニュースサイトに掲載されることもあり、認知とアクセスに貢献することがある。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- PLAN - 転換率戦略 -->
+        <section class="section-card">
+            <h2><i class="fas fa-clipboard-list mr-2 text-blue-600"></i>PLAN - 転換率戦略</h2>
+            
+            <!-- 商品ページ最適化 -->
+            <div class="bg-white rounded-lg shadow-md p-5 mb-6 border-l-4 border-blue-500">
+                <h3 class="text-xl font-bold text-blue-700 mb-3">2.1 転換率戦略 | 商品ページ最適化</h3>
+                
+                <div class="highlight-box">
+                    <div class="highlight-title"><i class="fas fa-percentage mr-2"></i>アクセスを獲得した後、購入につなげるための商品ページ最適化が重要</div>
+                    <p>せっかく流入したユーザーを逃さないよう、商品ページを最適化し、購入率（CVR）を向上させることが重要です。ページの構成、画像、説明文など様々な要素を最適化することで、CVRの大幅な改善が見込めます。</p>
+                </div>
+                
+                <div class="mt-6">
+                    <h4 class="font-semibold text-blue-800 mb-3">主要KPI</h4>
+                    <div class="kpi-box">
+                        <div class="kpi-item">
+                            <div class="kpi-number">01</div>
+                            <div class="kpi-label">コンバージョン率(CVR)</div>
+                        </div>
+                        <div class="kpi-item">
+                            <div class="kpi-number">02</div>
+                            <div class="kpi-label">カート投入率</div>
+                        </div>
+                        <div class="kpi-item">
+                            <div class="kpi-number">03</div>
+                            <div class="kpi-label">ページ滞在時間</div>
+                        </div>
+                        <div class="kpi-item">
+                            <div class="kpi-number">04</div>
+                            <div class="kpi-label">離脱率</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                    <div>
+                        <h4 class="font-semibold text-blue-800 mb-3">商品ページ最適化チェックリスト</h4>
+                        <div class="checklist">
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>商品タイトルは明確でキーワードを含んでいるか</div>
+                            </div>
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>商品画像は高品質で魅力的か（複数アングル、使用シーン含む）</div>
+                            </div>
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>商品の特徴や利点が明確に伝わる説明文になっているか</div>
+                            </div>
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>商品スペックや詳細情報が十分に提供されているか</div>
+                            </div>
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>価格や送料、配送情報が明示されているか</div>
+                            </div>
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>レビューや評価が目立つ位置に表示されているか</div>
+                            </div>
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>購入ボタンが目立ち、アクションを促しているか</div>
+                            </div>
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>モバイル端末での表示・操作性は最適化されているか</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold text-blue-800 mb-3">効果的な商品ページ構成</h4>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="mb-4">
+                                <div class="text-blue-700 font-semibold">01 | ファーストビュー</div>
+                                <p class="text-gray-600 text-sm ml-4 mt-1">最も重要な商品情報、USP（独自の強み）、魅力的な画像を配置。ユーザーの注目を集め、スクロールを促す</p>
+                            </div>
+                            <div class="mb-4">
+                                <div class="text-blue-700 font-semibold">02 | 商品詳細セクション</div>
+                                <p class="text-gray-600 text-sm ml-4 mt-1">商品の特徴、使用方法、サイズ、素材などの詳細情報。図表や比較表を活用して視覚的に分かりやすく説明</p>
+                            </div>
+                            <div class="mb-4">
+                                <div class="text-blue-700 font-semibold">03 | 信頼性構築要素</div>
+                                <p class="text-gray-600 text-sm ml-4 mt-1">レビュー、お気に入り数、受賞歴、メディア掲載実績などを表示し、商品の信頼性を高める</p>
+                            </div>
+                            <div class="mb-4">
+                                <div class="text-blue-700 font-semibold">04 | 比較・検討要素</div>
+                                <p class="text-gray-600 text-sm ml-4 mt-1">類似商品や他バリエーションとの比較情報。ユーザーの選択をサポートする情報提供</p>
+                            </div>
+                            <div class="mb-4">
+                                <div class="text-blue-700 font-semibold">05 | 購入促進要素</div>
+                                <p class="text-gray-600 text-sm ml-4 mt-1">期間限定特典、数量限定表示、送料無料などの特典情報。購入をためらうユーザーの背中を押す</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-6">
+                    <h4 class="font-semibold text-blue-800 mb-3">デバイス別最適化のポイント</h4>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h5 class="font-semibold text-center text-blue-700 mb-2">PC向け最適化</h5>
+                            <ul class="list-disc list-inside text-sm">
+                                <li class="mb-2">広い画面を活かした詳細情報の提供</li>
+                                <li class="mb-2">高解像度画像や比較表などの活用</li>
+                                <li class="mb-2">サイドバーやタブを活用した情報整理</li>
+                                <li class="mb-2">ホバーアクションなどPC特有のインタラクション活用</li>
+                                <li>商品バリエーションの一覧性を高める表示方法</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h5 class="font-semibold text-center text-green-700 mb-2">モバイル向け最適化</h5>
+                            <ul class="list-disc list-inside text-sm">
+                                <li class="mb-2">縦長スクロールに適した情報配置</li>
+                                <li class="mb-2">タップしやすいボタンサイズと間隔の確保</li>
+                                <li class="mb-2">ファイルサイズを抑えた画像使用による読み込み速度向上</li>
+                                <li class="mb-2">スワイプやタップに最適化したギャラリー表示</li>
+                                <li>重要情報を優先した簡潔な表示</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- レビューキャンペーン -->
+            <div class="bg-white rounded-lg shadow-md p-5 mb-6 border-l-4 border-blue-500">
+                <h3 class="text-xl font-bold text-blue-700 mb-3">2.2 転換率戦略 | レビューキャンペーン</h3>
+                
+                <div class="highlight-box">
+                    <div class="highlight-title"><i class="fas fa-star mr-2"></i>レビューの数と質が購入決定に大きく影響する</div>
+                    <p>ECサイトでは、多くの購入者がレビューを参考に購入を決定します。レビュー数と評価が高い商品ほど、信頼性が高まり購入確率が向上します。レビュー獲得を促進するキャンペーンは、転換率向上の効果的な施策です。</p>
+                </div>
+                
+                <div class="mt-6">
+                    <h4 class="font-semibold text-blue-800 mb-3">主要KPI</h4>
+                    <div class="kpi-box">
+                        <div class="kpi-item">
+                            <div class="kpi-number">01</div>
+                            <div class="kpi-label">レビュー投稿率</div>
+                        </div>
+                        <div class="kpi-item">
+                            <div class="kpi-number">02</div>
+                            <div class="kpi-label">レビュー評価点数</div>
+                        </div>
+                        <div class="kpi-item">
+                            <div class="kpi-number">03</div>
+                            <div class="kpi-label">レビュー獲得数</div>
+                        </div>
+                        <div class="kpi-item">
+                            <div class="kpi-number">04</div>
+                            <div class="kpi-label">キャンペーン参加率</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                    <div>
+                        <h4 class="font-semibold text-blue-800 mb-3">効果的なレビューキャンペーン施策</h4>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="mb-4">
+                                <div class="text-blue-700 font-semibold">01 | レビュー特典の提供</div>
+                                <p class="text-gray-600 text-sm ml-4 mt-1">レビュー投稿者に対してポイント付与、割引クーポン、サンプル製品などの特典を提供する</p>
+                            </div>
+                            <div class="mb-4">
+                                <div class="text-blue-700 font-semibold">02 | 期間限定キャンペーン</div>
+                                <p class="text-gray-600 text-sm ml-4 mt-1">特定期間中のレビュー投稿に対して通常より高い特典を提供し、短期間でのレビュー獲得を促進する</p>
+                            </div>
+                            <div class="mb-4">
+                                <div class="text-blue-700 font-semibold">03 | 写真・動画付きレビュー促進</div>
+                                <p class="text-gray-600 text-sm ml-4 mt-1">画像や動画付きのレビューに対して追加特典を提供し、より説得力のあるコンテンツ生成を促す</p>
+                            </div>
+                            <div class="mb-4">
+                                <div class="text-blue-700 font-semibold">04 | フォローアップメール</div>
+                                <p class="text-gray-600 text-sm ml-4 mt-1">商品到着後、適切なタイミングでレビュー依頼のメールを送信し、投稿を促す</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold text-blue-800 mb-3">レビュー有効活用のポイント</h4>
+                        <div class="checklist">
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>高評価レビューを商品ページの目立つ位置に表示する</div>
+                            </div>
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>写真付きの具体的なレビューを優先的に表示する</div>
+                            </div>
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>レビュー内容を分析し、商品改善に活用する</div>
+                            </div>
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>低評価レビューには迅速に対応し、改善策を提示する</div>
+                            </div>
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>レビュー内の好評価ポイントを商品説明に反映する</div>
+                            </div>
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>SNSなどでユーザーレビューを活用した広告を展開する</div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-yellow-50 p-4 rounded-lg mt-4">
+                            <h5 class="font-semibold text-yellow-800 mb-2">注意点</h5>
+                            <ul class="list-disc list-inside text-sm">
+                                <li class="mb-2">モールのレビュー獲得施策ルールを遵守する</li>
+                                <li class="mb-2">高評価を条件にした特典提供は避ける</li>
+                                <li class="mb-2">レビュー投稿のハードルを下げる工夫をする</li>
+                                <li>自作自演のレビューやサクラレビューを行わない</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 商品施策 -->
+            <div class="bg-white rounded-lg shadow-md p-5 mb-6 border-l-4 border-blue-500">
+                <h3 class="text-xl font-bold text-blue-700 mb-3">2.3 転換率戦略 | 商品施策</h3>
+                
+                <div class="highlight-box">
+                    <div class="highlight-title"><i class="fas fa-box-open mr-2"></i>商品自体の魅力を高め、購入ハードルを下げる施策</div>
+                    <p>アクセスを獲得し、魅力的なページを構築しても、商品自体の付加価値や購入しやすさが低ければ、転換率は向上しません。顧客ニーズに合わせた商品構成や価格戦略、特典などを通じて購入を促進します。</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                    <div>
+                        <h4 class="font-semibold text-blue-800 mb-3">商品施策の主要アプローチ</h4>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="mb-4">
+                                <div class="text-blue-700 font-semibold">01 | バンドル・セット商品</div>
+                                <p class="text-gray-600 text-sm ml-4 mt-1">関連商品をセットにして割引価格で提供することで、客単価アップと購入決定を促進する</p>
+                            </div>
+                            <div class="mb-4">
+                                <div class="text-blue-700 font-semibold">02 | 限定商品・数量限定</div>
+                                <p class="text-gray-600 text-sm ml-4 mt-1">希少性を演出し、「今買わないと手に入らない」という心理を刺激して購入を促す</p>
+                            </div>
+                            <div class="mb-4">
+                                <div class="text-blue-700 font-semibold">03 | 無料サンプル・おまけ</div>
+                                <p class="text-gray-600 text-sm ml-4 mt-1">本商品とは別の商品サンプルや特典を付けることで、付加価値を高める</p>
+                            </div>
+                            <div class="mb-4">
+                                <div class="text-blue-700 font-semibold">04 | 価格戦略</div>
+                                <p class="text-gray-600 text-sm ml-4 mt-1">適切な価格設定と定期的なセール実施で、購入ハードルを下げる</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold text-blue-800 mb-3">効果的な価格戦略</h4>
+                        <div class="checklist">
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>適切な価格帯設定（競合調査に基づく）</div>
+                            </div>
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>心理的価格設定（999円など）の活用</div>
+                            </div>
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>定価と割引価格の併記による割安感の演出</div>
+                            </div>
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>購入点数による段階的割引の導入</div>
+                            </div>
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>送料無料の閾値設定による購入金額アップ</div>
+                            </div>
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>タイムセールなど期間限定価格の活用</div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-green-50 p-4 rounded-lg mt-4">
+                            <h5 class="font-semibold text-green-800 mb-2">商品バリエーション戦略</h5>
+                            <ul class="list-disc list-inside text-sm">
+                                <li class="mb-2">エントリーモデルから高級モデルまでの幅広いラインナップ</li>
+                                <li class="mb-2">サイズ、色、素材などの多様なバリエーション</li>
+                                <li class="mb-2">季節限定商品による新鮮さの演出</li>
+                                <li>お試しサイズから大容量サイズまでの展開</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-6">
+                    <h4 class="font-semibold text-blue-800 mb-3">購入障壁を下げる施策</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-gray-50 p-3 rounded-lg">
+                            <div class="text-center mb-2">
+                                <i class="fas fa-truck text-blue-600 text-2xl"></i>
+                            </div>
+                            <h5 class="text-center font-semibold text-gray-700 mb-2">配送オプションの充実</h5>
+                            <ul class="text-sm text-gray-600 list-disc list-inside">
+                                <li>送料無料の適用条件緩和</li>
+                                <li>複数の配送方法から選択可能に</li>
+                                <li>配送日時指定の自由度向上</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-3 rounded-lg">
+                            <div class="text-center mb-2">
+                                <i class="fas fa-undo-alt text-blue-600 text-2xl"></i>
+                            </div>
+                            <h5 class="text-center font-semibold text-gray-700 mb-2">返品・交換ポリシー</h5>
+                            <ul class="text-sm text-gray-600 list-disc list-inside">
+                                <li>簡単な返品手続き</li>
+                                <li>返品送料無料制度</li>
+                                <li>安心保証の提供</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-3 rounded-lg">
+                            <div class="text-center mb-2">
+                                <i class="fas fa-credit-card text-blue-600 text-2xl"></i>
+                            </div>
+                            <h5 class="text-center font-semibold text-gray-700 mb-2">支払い方法の多様化</h5>
+                            <ul class="text-sm text-gray-600 list-disc list-inside">
+                                <li>複数の決済方法対応</li>
+                                <li>後払いオプションの提供</li>
+                                <li>分割払い対応</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- PLAN - リピーター・LTV戦略 -->
+        <section class="section-card">
+            <h2><i class="fas fa-clipboard-list mr-2 text-blue-600"></i>PLAN - リピーター・LTV戦略</h2>
+            
+            <!-- 定期便・セット販売 -->
+            <div class="bg-white rounded-lg shadow-md p-5 mb-6 border-l-4 border-blue-500">
+                <h3 class="text-xl font-bold text-blue-700 mb-3">3.1 リピーター・LTV戦略 | 定期便・セット販売</h3>
+                
+                <div class="highlight-box">
+                    <div class="highlight-title"><i class="fas fa-sync-alt mr-2"></i>継続的な購入を促進し、顧客生涯価値(LTV)を最大化</div>
+                    <p>新規顧客獲得よりもリピーターを増やす方が効率的です。定期購入プランやセット販売などの仕組みを通じて、継続的な購入を促し、顧客一人当たりの生涯価値(LTV)を高めることが重要です。</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                    <div>
+                        <h4 class="font-semibold text-blue-800 mb-3">定期便の効果的な設計</h4>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="mb-4">
+                                <div class="text-blue-700 font-semibold">01 | 適切な頻度設定</div>
+                                <p class="text-gray-600 text-sm ml-4 mt-1">商品の消費サイクルに合わせた頻度選択肢を提供（月1回、2ヶ月に1回など）</p>
+                            </div>
+                            <div class="mb-4">
+                                <div class="text-blue-700 font-semibold">02 | 割引特典</div>
+                                <p class="text-gray-600 text-sm ml-4 mt-1">通常購入より5-15%程度の割引を提供し、定期購入の魅力を高める</p>
+                            </div>
+                            <div class="mb-4">
+                                <div class="text-blue-700 font-semibold">03 | 柔軟な変更・休止</div>
+                                <p class="text-gray-600 text-sm ml-4 mt-1">配送タイミングの変更や一時休止を可能にし、顧客の状況に合わせた利用を促進</p>
+                            </div>
+                            <div class="mb-4">
+                                <div class="text-blue-700 font-semibold">04 | 特別サービス</div>
+                                <p class="text-gray-600 text-sm ml-4 mt-1">定期便会員限定の特典やサービス、先行販売などの付加価値を提供</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold text-blue-800 mb-3">効果的なセット販売戦略</h4>
+                        <div class="checklist">
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>関連商品の組み合わせによるクロスセル</div>
+                            </div>
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>同一商品の複数個セットによる割引</div>
+                            </div>
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>季節や用途に合わせたセット構成</div>
+                            </div>
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>人気商品と新商品の組み合わせによる新商品認知向上</div>
+                            </div>
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>限定セットによる希少性の演出</div>
+                            </div>
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>ギフトセットの充実（贈答用、自家用など）</div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-blue-50 p-4 rounded-lg mt-4">
+                            <h5 class="font-semibold text-blue-800 mb-2">主要KPI</h5>
+                            <ul class="list-disc list-inside text-sm">
+                                <li class="mb-2">定期購入率：全顧客中の定期購入利用者比率</li>
+                                <li class="mb-2">定期購入継続率：一定期間後の継続率</li>
+                                <li class="mb-2">定期購入顧客LTV：定期購入顧客の平均生涯価値</li>
+                                <li>セット購入率：セット商品の購入比率</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-6">
+                    <h4 class="font-semibold text-blue-800 mb-3">商品カテゴリー別リピート戦略</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-gray-50 p-3 rounded-lg">
+                            <h5 class="text-center font-semibold text-gray-700 mb-2">消耗品・日用品</h5>
+                            <p class="text-sm text-gray-600 mb-2">定期的に消費される商品に最適</p>
+                            <ul class="text-sm text-gray-600 list-disc list-inside">
+                                <li>消費サイクルに合わせた定期便</li>
+                                <li>まとめ買い割引</li>
+                                <li>自動再注文の仕組み</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-3 rounded-lg">
+                            <h5 class="text-center font-semibold text-gray-700 mb-2">食品・飲料</h5>
+                            <p class="text-sm text-gray-600 mb-2">味の好みや季節変化に対応</p>
+                            <ul class="text-sm text-gray-600 list-disc list-inside">
+                                <li>定期的な新商品紹介</li>
+                                <li>季節限定商品</li>
+                                <li>おすすめセットの定期更新</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-3 rounded-lg">
+                            <h5 class="text-center font-semibold text-gray-700 mb-2">アパレル・雑貨</h5>
+                            <p class="text-sm text-gray-600 mb-2">トレンドや季節に合わせた提案</p>
+                            <ul class="text-sm text-gray-600 list-disc list-inside">
+                                <li>シーズンごとのコレクション</li>
+                                <li>コーディネート提案</li>
+                                <li>会員限定先行販売</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- ブランドフォロー -->
+            <div class="bg-white rounded-lg shadow-md p-5 mb-6 border-l-4 border-blue-500">
+                <h3 class="text-xl font-bold text-blue-700 mb-3">3.2 リピーター・LTV戦略 | ブランドフォロー</h3>
+                
+                <div class="highlight-box">
+                    <div class="highlight-title"><i class="fas fa-heart mr-2"></i>ブランドファンを育成し、継続的な関係を構築</div>
+                    <p>単なる商品販売だけでなく、ブランドとの継続的な関係性を構築することで、長期的なLTV向上を図ります。お気に入り登録やブランドフォローなどの仕組みを活用し、ファン化を促進します。</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                    <div>
+                        <h4 class="font-semibold text-blue-800 mb-3">ブランドフォロー促進施策</h4>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="mb-4">
+                                <div class="text-blue-700 font-semibold">01 | フォロー特典</div>
+                                <p class="text-gray-600 text-sm ml-4 mt-1">ブランドフォロー時の限定クーポン提供や特別ポイント付与</p>
+                            </div>
+                            <div class="mb-4">
+                                <div class="text-blue-700 font-semibold">02 | フォロワー限定情報</div>
+                                <p class="text-gray-600 text-sm ml-4 mt-1">新商品情報の先行公開、限定イベント案内などフォロワー特典の充実</p>
+                            </div>
+                            <div class="mb-4">
+                                <div class="text-blue-700 font-semibold">03 | フォロワー参加型企画</div>
+                                <p class="text-gray-600 text-sm ml-4 mt-1">商品開発への意見募集、モニター募集など参加機会の提供</p>
+                            </div>
+                            <div class="mb-4">
+                                <div class="text-blue-700 font-semibold">04 | ストーリー発信</div>
+                                <p class="text-gray-600 text-sm ml-4 mt-1">商品やブランドの背景ストーリーを発信し、ブランド価値の共感を高める</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold text-blue-800 mb-3">ブランド育成のポイント</h4>
+                        <div class="checklist">
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>一貫したブランドメッセージとビジュアル</div>
+                            </div>
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>顧客との双方向コミュニケーション</div>
+                            </div>
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>顧客体験の一貫性と品質維持</div>
+                            </div>
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>ブランドの社会的価値や理念の明確化</div>
+                            </div>
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>顧客ロイヤルティプログラムの設計</div>
+                            </div>
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>サービスとアフターフォローの充実</div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-blue-50 p-4 rounded-lg mt-4">
+                            <h5 class="font-semibold text-blue-800 mb-2">主要KPI</h5>
+                            <ul class="list-disc list-inside text-sm">
+                                <li class="mb-2">ブランドフォロー数：お気に入り登録数の推移</li>
+                                <li class="mb-2">フォロワーの購入率：フォロー後の実際の購入率</li>
+                                <li class="mb-2">フォロワーLTV：一般顧客とフォロワーのLTV比較</li>
+                                <li>フォロワーエンゲージメント：コンテンツの反応率</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-6">
+                    <h4 class="font-semibold text-blue-800 mb-3">ブランドコミュニティ構築</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h5 class="font-semibold text-center text-gray-700 mb-3">オンラインコミュニティ</h5>
+                            <ul class="list-disc list-inside text-sm text-gray-600">
+                                <li class="mb-2">SNSグループやコミュニティ機能の活用</li>
+                                <li class="mb-2">ユーザー同士の交流促進</li>
+                                <li class="mb-2">ユーザー投稿コンテンツ(UGC)の促進と活用</li>
+                                <li class="mb-2">オンライン限定イベントの開催</li>
+                                <li>ユーザー体験談や口コミの共有プラットフォーム</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h5 class="font-semibold text-center text-gray-700 mb-3">ロイヤルティプログラム</h5>
+                            <ul class="list-disc list-inside text-sm text-gray-600">
+                                <li class="mb-2">会員ランク制度による段階的特典</li>
+                                <li class="mb-2">購入金額に応じたポイント還元</li>
+                                <li class="mb-2">会員限定イベントや販売会</li>
+                                <li class="mb-2">会員向けパーソナライズドサービス</li>
+                                <li>会員記念日特典（誕生日、会員登録日など）</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- メルマガ -->
+            <div class="bg-white rounded-lg shadow-md p-5 mb-6 border-l-4 border-blue-500">
+                <h3 class="text-xl font-bold text-blue-700 mb-3">3.3 リピーター・LTV戦略 | メルマガ</h3>
+                
+                <div class="highlight-box">
+                    <div class="highlight-title"><i class="fas fa-envelope mr-2"></i>定期的なコミュニケーションで顧客との接点を維持</div>
+                    <p>メールマガジンは費用対効果の高いリピート促進ツールです。顧客セグメントに合わせたパーソナライズされた情報提供により、再購入を促進します。</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                    <div>
+                        <h4 class="font-semibold text-blue-800 mb-3">効果的なメルマガ設計</h4>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="mb-4">
+                                <div class="text-blue-700 font-semibold">01 | セグメント配信</div>
+                                <p class="text-gray-600 text-sm ml-4 mt-1">購買履歴、閲覧履歴、顧客属性などに基づいたセグメント別メール配信</p>
+                            </div>
+                            <div class="mb-4">
+                                <div class="text-blue-700 font-semibold">02 | パーソナライズ</div>
+                                <p class="text-gray-600 text-sm ml-4 mt-1">顧客名、過去の購入情報などを活用した個別化されたコンテンツ提供</p>
+                            </div>
+                            <div class="mb-4">
+                                <div class="text-blue-700 font-semibold">03 | シナリオ設計</div>
+                                <p class="text-gray-600 text-sm ml-4 mt-1">購入後のフォローメール、カゴ落ちリマインド、長期未購入者向けなど目的別メール</p>
+                            </div>
+                            <div class="mb-4">
+                                <div class="text-blue-700 font-semibold">04 | A/Bテスト</div>
+                                <p class="text-gray-600 text-sm ml-4 mt-1">件名、内容、送信タイミングなどの最適化を継続的に実施</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold text-blue-800 mb-3">メルマガコンテンツ戦略</h4>
+                        <div class="checklist">
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>お得なクーポンや限定セール情報</div>
+                            </div>
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>新商品情報や限定商品の先行案内</div>
+                            </div>
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>季節に合わせた商品提案やコンテンツ</div>
+                            </div>
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>商品の使い方やコツなどの有益情報</div>
+                            </div>
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>ユーザーストーリーやレビュー紹介</div>
+                            </div>
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>アンケートやフィードバック募集</div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-blue-50 p-4 rounded-lg mt-4">
+                            <h5 class="font-semibold text-blue-800 mb-2">主要KPI</h5>
+                            <ul class="list-disc list-inside text-sm">
+                                <li class="mb-2">開封率：メールを開いた割合</li>
+                                <li class="mb-2">クリック率：メール内リンクのクリック率</li>
+                                <li class="mb-2">コンバージョン率：メールからの購入率</li>
+                                <li>解除率：メルマガ解除率</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-6">
+                    <h4 class="font-semibold text-blue-800 mb-3">自動化メール設計例</h4>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full bg-white border border-gray-200">
+                            <thead>
+                                <tr>
+                                    <th class="py-2 px-4 border-b text-left bg-gray-50">タイミング</th>
+                                    <th class="py-2 px-4 border-b text-left bg-gray-50">目的</th>
+                                    <th class="py-2 px-4 border-b text-left bg-gray-50">コンテンツ例</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="py-2 px-4 border-b">初回購入直後</td>
+                                    <td class="py-2 px-4 border-b">ウェルカム/使い方案内</td>
+                                    <td class="py-2 px-4 border-b">お礼メッセージ、商品の使い方、次回購入クーポン</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 border-b">購入後1週間</td>
+                                    <td class="py-2 px-4 border-b">フォローアップ</td>
+                                    <td class="py-2 px-4 border-b">商品の使用感確認、レビュー依頼、関連商品紹介</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 border-b">カート放棄時</td>
+                                    <td class="py-2 px-4 border-b">購入促進</td>
+                                    <td class="py-2 px-4 border-b">カートに入れた商品のリマインド、特別クーポン</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 border-b">最終購入から30日</td>
+                                    <td class="py-2 px-4 border-b">再購入促進</td>
+                                    <td class="py-2 px-4 border-b">「お久しぶりです」メッセージ、新商品紹介</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 border-b">季節の変わり目</td>
+                                    <td class="py-2 px-4 border-b">季節商品提案</td>
+                                    <td class="py-2 px-4 border-b">季節に合わせた商品提案、限定セール情報</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 border-b">顧客誕生月</td>
+                                    <td class="py-2 px-4 border-b">顧客感謝</td>
+                                    <td class="py-2 px-4 border-b">誕生月特別クーポン、会員限定セール案内</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- DO - 戦略から施策へ -->
+        <section class="section-card">
+            <h2><i class="fas fa-play-circle mr-2 text-green-600"></i>DO - 戦略から施策へ</h2>
+            
+            <div class="bg-white rounded-lg shadow-md p-5 mb-6 border-l-4 border-green-500">
+                <h3 class="text-xl font-bold text-green-700 mb-3">戦略から施策への展開プロセス</h3>
+                
+                <div class="highlight-box bg-green-50 border-green-500">
+                    <div class="highlight-title text-green-800"><i class="fas fa-tasks mr-2"></i>計画を実行に移すための具体的なアクションプラン</div>
+                    <p>計画段階で策定した戦略を具体的な施策として落とし込み、効果的に実行するためのプロセスと体制を整備します。実行フェーズでは、優先順位に基づいた段階的な実施と適切なリソース配分が重要です。</p>
+                </div>
+                
+                <div class="process-flow mt-6">
+                    <div class="process-step">
+                        <div class="font-semibold mb-2">戦略の具体化</div>
+                        <p class="text-sm">PLANで策定した戦略を具体的な施策に落とし込む</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="font-semibold mb-2">施策の優先順位付け</div>
+                        <p class="text-sm">インパクトとリソースから優先順位を決定</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="font-semibold mb-2">リソース配分</div>
+                        <p class="text-sm">人員、予算、時間の最適配分</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="font-semibold mb-2">施策の実行</div>
+                        <p class="text-sm">タスク管理と進捗モニタリング</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                    <div>
+                        <h4 class="font-semibold text-green-800 mb-3">実行計画の策定</h4>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="mb-4">
+                                <div class="text-green-700 font-semibold">01 | 目標の明確化</div>
+                                <p class="text-gray-600 text-sm ml-4 mt-1">各施策の具体的な目標と成功指標（KPI）を設定</p>
+                            </div>
+                            <div class="mb-4">
+                                <div class="text-green-700 font-semibold">02 | 実施スケジュール</div>
+                                <p class="text-gray-600 text-sm ml-4 mt-1">具体的なマイルストーンとタイムラインの設定</p>
+                            </div>
+                            <div class="mb-4">
+                                <div class="text-green-700 font-semibold">03 | 役割分担</div>
+                                <p class="text-gray-600 text-sm ml-4 mt-1">各施策の担当者と責任範囲の明確化</p>
+                            </div>
+                            <div class="mb-4">
+                                <div class="text-green-700 font-semibold">04 | 必要リソース</div>
+                                <p class="text-gray-600 text-sm ml-4 mt-1">各施策に必要な予算、ツール、人員の特定と確保</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold text-green-800 mb-3">効果的な実行のポイント</h4>
+                        <div class="checklist">
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle text-green-600"></i>
+                                <div>小規模テストから段階的に拡大する</div>
+                            </div>
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle text-green-600"></i>
+                                <div>定期的な進捗確認と調整の場を設ける</div>
+                            </div>
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle text-green-600"></i>
+                                <div>予期せぬ状況に対応する柔軟性を確保</div>
+                            </div>
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle text-green-600"></i>
+                                <div>早期成果を可視化し、モチベーション維持</div>
+                            </div>
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle text-green-600"></i>
+                                <div>複数施策間の相互影響を考慮した調整</div>
+                            </div>
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle text-green-600"></i>
+                                <div>実行プロセスも継続的に改善</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-6">
+                    <h4 class="font-semibold text-green-800 mb-3">実行管理ツール</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-gray-50 p-3 rounded-lg">
+                            <div class="text-center mb-2">
+                                <i class="fas fa-calendar-alt text-green-600 text-2xl"></i>
+                            </div>
+                            <h5 class="text-center font-semibold text-gray-700 mb-2">ガントチャート</h5>
+                            <p class="text-sm text-gray-600">施策の全体スケジュール可視化。タスクの依存関係や進捗状況を一目で把握できる</p>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-3 rounded-lg">
+                            <div class="text-center mb-2">
+                                <i class="fas fa-clipboard-list text-green-600 text-2xl"></i>
+                            </div>
+                            <h5 class="text-center font-semibold text-gray-700 mb-2">タスク管理ボード</h5>
+                            <p class="text-sm text-gray-600">「未着手」「進行中」「完了」などの状態別にタスクを整理し、進捗を視覚化</p>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-3 rounded-lg">
+                            <div class="text-center mb-2">
+                                <i class="fas fa-chart-line text-green-600 text-2xl"></i>
+                            </div>
+                            <h5 class="text-center font-semibold text-gray-700 mb-2">KPIダッシュボード</h5>
+                            <p class="text-sm text-gray-600">主要指標をリアルタイムで可視化し、施策の効果を継続的にモニタリング</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 3C分析シート -->
+        <section class="section-card">
+            <h2>PLAN | 3C分析シート(テンプレート)</h2>
+            
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <table class="template-table">
+                    <thead>
+                        <tr>
+                            <th class="w-1/5">3C</th>
+                            <th class="w-1/5">項目</th>
+                            <th class="w-2/5">分析内容/データ</th>
+                            <th class="w-1/5">流入/転換/リピートへの影響</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="3" class="bg-blue-50">自社</td>
+                            <td>商品ラインナップ</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>強み</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>弱み</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3" class="bg-red-50">競合</td>
+                            <td>主要競合</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>競合優位点</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>競合弱点</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3" class="bg-green-50">市場・顧客</td>
+                            <td>顧客層</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>市場トレンド</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>顧客ニーズ</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+        <!-- ファネル整理シート -->
+        <section class="section-card">
+            <h2>PLAN | ファネル整理シート(テンプレート)</h2>
+            
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <table class="template-table">
+                    <thead>
+                        <tr>
+                            <th>ファネル段階</th>
+                            <th>想定課題・機会</th>
+                            <th>施策アイデア</th>
+                            <th>優先度（高/中/低）</th>
+                            <th>3C分析の根拠</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="bg-blue-50">流入（アクセス）</td>
+                            <td>
+                                <ul class="list-disc list-inside text-sm">
+                                    <li>広告運用予算が限られている</li>
+                                    <li>差別化が必要</li>
+                                    <li>SNSを活用する顧客が多い</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ol class="list-decimal list-inside text-sm">
+                                    <li>広告運用キーワード精査</li>
+                                    <li>インスタ運用強化</li>
+                                    <li>SEOリライト強化</li>
+                                </ol>
+                            </td>
+                            <td>高</td>
+                            <td>
+                                <ul class="list-disc list-inside text-sm">
+                                    <li>競合Aが広告強い</li>
+                                    <li>顧客はSNSで比較</li>
+                                    <li>自社は予算少なめ</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="bg-yellow-50">転換率（CVR）</td>
+                            <td>
+                                <ul class="list-disc list-inside text-sm">
+                                    <li>レビュー数が少ない</li>
+                                    <li>高価格帯なので魅力訴求が重要</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ol class="list-decimal list-inside text-sm">
+                                    <li>レビューキャンペーン</li>
+                                    <li>商品ページの写真/動画リニューアル</li>
+                                </ol>
+                            </td>
+                            <td>高</td>
+                            <td>
+                                <ul class="list-disc list-inside text-sm">
+                                    <li>顧客はレビュー重視</li>
+                                    <li>自社は品質優位だが価格高め</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="bg-green-50">リピート</td>
+                            <td>
+                                <ul class="list-disc list-inside text-sm">
+                                    <li>定期便や追加購入の仕組みがない</li>
+                                    <li>カスタマーサポートは好評</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ol class="list-decimal list-inside text-sm">
+                                    <li>定期便プラン導入</li>
+                                    <li>リピートクーポン</li>
+                                    <li>メルマガ強化</li>
+                                </ol>
+                            </td>
+                            <td>中</td>
+                            <td>
+                                <ul class="list-disc list-inside text-sm">
+                                    <li>競合は大規模セール頼み</li>
+                                    <li>自社のサポートは好評</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+        <!-- CHECK - 効果検証 -->
+        <section class="section-card">
+            <h2><i class="fas fa-chart-bar mr-2 text-yellow-600"></i>CHECK - 効果検証</h2>
+            
+            <div class="bg-white rounded-lg shadow-md p-5 mb-6 border-l-4 border-yellow-500">
+                <h3 class="text-xl font-bold text-yellow-700 mb-3">4.1 効果検証 | PDCAを回すために</h3>
+                
+                <div class="highlight-box bg-yellow-50 border-yellow-500">
+                    <div class="highlight-title text-yellow-800"><i class="fas fa-search mr-2"></i>AISASフレームワークで効果検証、ボトルネックを抽出し改善へとつなげる</div>
+                    <p>ファネルの段階ごとにKPIを設定し、ボトルネックを構造的に捉えることで、現状打てる施策の優先順位がつけやすくなる。</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-4 mt-6">
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-center text-blue-700 mb-3">Attention</h4>
+                        <div class="bg-white p-3 rounded shadow-sm mb-2">
+                            <div class="text-center font-semibold text-gray-700 mb-1">Key KPI</div>
+                            <div class="text-center text-blue-600">広告CTR</div>
+                        </div>
+                        <div class="bg-white p-3 rounded shadow-sm">
+                            <div class="text-center font-semibold text-gray-700 mb-1">Sub KPI</div>
+                            <ul class="text-sm text-gray-600 list-disc list-inside">
+                                <li>アクセス/UU</li>
+                                <li>SNSフォロワー</li>
+                                <li>エンゲージメント</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-indigo-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-center text-indigo-700 mb-3">Interest</h4>
+                        <div class="bg-white p-3 rounded shadow-sm mb-2">
+                            <div class="text-center font-semibold text-gray-700 mb-1">Key KPI</div>
+                            <div class="text-center text-indigo-600">カート投入率</div>
+                        </div>
+                        <div class="bg-white p-3 rounded shadow-sm">
+                            <div class="text-center font-semibold text-gray-700 mb-1">Sub KPI</div>
+                            <ul class="text-sm text-gray-600 list-disc list-inside">
+                                <li>お気に入り登録数</li>
+                                <li>お気に入り率</li>
+                                <li>ページ滞在時間</li>
+                                <li>直帰率</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-purple-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-center text-purple-700 mb-3">Search</h4>
+                        <div class="bg-white p-3 rounded shadow-sm mb-2">
+                            <div class="text-center font-semibold text-gray-700 mb-1">Key KPI</div>
+                            <div class="text-center text-purple-600">検索経由の流入数</div>
+                        </div>
+                        <div class="bg-white p-3 rounded shadow-sm">
+                            <div class="text-center font-semibold text-gray-700 mb-1">Sub KPI</div>
+                            <ul class="text-sm text-gray-600 list-disc list-inside">
+                                <li>検索順位</li>
+                                <li>キーワード別CTR</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-green-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-center text-green-700 mb-3">Action</h4>
+                        <div class="bg-white p-3 rounded shadow-sm mb-2">
+                            <div class="text-center font-semibold text-gray-700 mb-1">Key KPI</div>
+                            <div class="text-center text-green-600">CVR</div>
+                        </div>
+                        <div class="bg-white p-3 rounded shadow-sm">
+                            <div class="text-center font-semibold text-gray-700 mb-1">Sub KPI</div>
+                            <ul class="text-sm text-gray-600 list-disc list-inside">
+                                <li>寄附金額</li>
+                                <li>アクセス数</li>
+                                <li>寄付単価</li>
+                                <li>離脱率</li>
+                                <li>平均寄附頻度</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-pink-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-center text-pink-700 mb-3">Share</h4>
+                        <div class="bg-white p-3 rounded shadow-sm mb-2">
+                            <div class="text-center font-semibold text-gray-700 mb-1">Key KPI</div>
+                            <div class="text-center text-pink-600">レビュー投稿率/点数</div>
+                        </div>
+                        <div class="bg-white p-3 rounded shadow-sm">
+                            <div class="text-center font-semibold text-gray-700 mb-1">Sub KPI</div>
+                            <ul class="text-sm text-gray-600 list-disc list-inside">
+                                <li>SNSシェア数</li>
+                                <li>ハッシュタグ投稿数</li>
+                                <li>メルマガ登録数</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8">
+                    <h4 class="font-semibold text-yellow-800 mb-3">効果的な検証プロセス</h4>
+                    <div class="process-flow">
+                        <div class="process-step bg-yellow-100">
+                            <div class="font-semibold mb-2">データ収集</div>
+                            <p class="text-sm">各KPIのデータを定期的に収集・集計</p>
+                        </div>
+                        <div class="process-step bg-yellow-100">
+                            <div class="font-semibold mb-2">分析</div>
+                            <p class="text-sm">目標との乖離や、ファネル間の比率分析</p>
+                        </div>
+                        <div class="process-step bg-yellow-100">
+                            <div class="font-semibold mb-2">ボトルネック特定</div>
+                            <p class="text-sm">改善余地が大きい領域の特定</p>
+                        </div>
+                        <div class="process-step bg-yellow-100">
+                            <div class="font-semibold mb-2">原因究明</div>
+                            <p class="text-sm">パフォーマンス低下の要因分析</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                    <div>
+                        <h4 class="font-semibold text-yellow-800 mb-3">効果検証のポイント</h4>
+                        <div class="checklist">
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle text-yellow-600"></i>
+                                <div>施策実施前と後のデータを比較する</div>
+                            </div>
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle text-yellow-600"></i>
+                                <div>複数の指標を組み合わせて多角的に分析</div>
+                            </div>
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle text-yellow-600"></i>
+                                <div>セグメント別の効果差異を分析</div>
+                            </div>
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle text-yellow-600"></i>
+                                <div>季節変動など外部要因の影響を考慮</div>
+                            </div>
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle text-yellow-600"></i>
+                                <div>短期的効果と中長期的効果を区別して評価</div>
+                            </div>
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle text-yellow-600"></i>
+                                <div>定性的フィードバックも収集し総合的に判断</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold text-yellow-800 mb-3">検証レポートテンプレート</h4>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="mb-3">
+                                <div class="text-yellow-700 font-semibold mb-1">1. 実施施策サマリー</div>
+                                <p class="text-gray-600 text-sm ml-4">実施した施策の概要、期間、目標KPI</p>
+                            </div>
+                            <div class="mb-3">
+                                <div class="text-yellow-700 font-semibold mb-1">2. KPI達成状況</div>
+                                <p class="text-gray-600 text-sm ml-4">目標値と実績値の比較、前期比較</p>
+                            </div>
+                            <div class="mb-3">
+                                <div class="text-yellow-700 font-semibold mb-1">3. 成功要因/課題</div>
+                                <p class="text-gray-600 text-sm ml-4">うまく行った点と改善が必要な点</p>
+                            </div>
+                            <div class="mb-3">
+                                <div class="text-yellow-700 font-semibold mb-1">4. ボトルネック分析</div>
+                                <p class="text-gray-600 text-sm ml-4">ファネル各段階の転換率と問題点</p>
+                            </div>
+                            <div>
+                                <div class="text-yellow-700 font-semibold mb-1">5. 次期アクション</div>
+                                <p class="text-gray-600 text-sm ml-4">改善すべき点と具体的なアクション</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ACTION - 改善施策 -->
+        <section class="section-card">
+            <h2><i class="fas fa-redo-alt mr-2 text-red-600"></i>ACTION - 改善施策と次サイクルへの反映</h2>
+            
+            <div class="bg-white rounded-lg shadow-md p-5 mb-6 border-l-4 border-red-500">
+                <h3 class="text-xl font-bold text-red-700 mb-3">5.1 改善施策と次サイクルへの反映 | 優先度をつけて実行</h3>
+                
+                <div class="highlight-box bg-red-50 border-red-500">
+                    <div class="highlight-title text-red-800"><i class="fas fa-bullseye mr-2"></i>インパクト×エフォートマトリクスを用い、タスクの優先度を洗い出す</div>
+                    <p>AISAS分析でボトルネックが明確になった後、「Action」フェーズではインパクト×エフォートマトリクスを使うことで、施策を客観的に取捨選択しやすくなる。特にPDCAを素早く回し、効果の高いものを優先して試したい場合には最適な手法である。</p>
+                </div>
+                
+                <div class="matrix-grid mt-6">
+                    <div class="matrix-cell matrix-cell-1">
+                        <div class="font-semibold mb-2">工数：大/影響：小</div>
+                        <div class="text-sm">基本的に見送り</div>
+                    </div>
+                    <div class="matrix-cell matrix-cell-2">
+                        <div class="font-semibold mb-2">工数：大/影響：大</div>
+                        <div class="text-sm">中長期計画</div>
+                    </div>
+                    <div class="matrix-cell matrix-cell-3">
+                        <div class="font-semibold mb-2">工数：小/影響：小</div>
+                        <div class="text-sm">隙間タスク</div>
+                    </div>
+                    <div class="matrix-cell matrix-cell-4">
+                        <div class="font-semibold mb-2">工数：小/影響：大</div>
+                        <div class="text-sm">すぐに実行</div>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                    <div>
+                        <h4 class="font-semibold text-red-800 mb-3">優先順位付けの基準</h4>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="mb-4">
+                                <div class="text-red-700 font-semibold">01 | 影響度（インパクト）</div>
+                                <p class="text-gray-600 text-sm ml-4 mt-1">売上貢献度やCVR向上など、目標に対しどれだけ貢献しそうか</p>
+                                <ul class="list-disc list-inside text-sm ml-4 mt-1 text-gray-600">
+                                    <li>売上・CVRへの直接的影響</li>
+                                    <li>長期的なブランド価値への影響</li>
+                                    <li>他施策への波及効果</li>
+                                </ul>
+                            </div>
+                            <div class="mb-4">
+                                <div class="text-red-700 font-semibold">02 | エフォート（工数）</div>
+                                <p class="text-gray-600 text-sm ml-4 mt-1">実行にするにあたって必要なリソース量（予算、人員、期間など含む）</p>
+                                <ul class="list-disc list-inside text-sm ml-4 mt-1 text-gray-600">
+                                    <li>開発/実装に必要な工数</li>
+                                    <li>予算規模</li>
+                                    <li>外部依存度（社外リソース必要性）</li>
+                                    <li>実施までのリードタイム</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold text-red-800 mb-3">次サイクルへの反映ステップ</h4>
+                        <div class="checklist">
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle text-red-600"></i>
+                                <div>CHECK段階で発見した課題を整理・分類</div>
+                            </div>
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle text-red-600"></i>
+                                <div>各課題に対する複数の改善案を抽出</div>
+                            </div>
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle text-red-600"></i>
+                                <div>マトリクスを用いて優先順位を決定</div>
+                            </div>
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle text-red-600"></i>
+                                <div>短期・中期・長期の施策に分類</div>
+                            </div>
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle text-red-600"></i>
+                                <div>次期PLANへの反映内容を明確化</div>
+                            </div>
+                            <div class="checklist-item">
+                                <i class="fas fa-check-circle text-red-600"></i>
+                                <div>改善サイクルを継続的に回す仕組み構築</div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-red-50 p-4 rounded-lg mt-4">
+                            <h5 class="font-semibold text-red-800 mb-2">PDCAサイクル高速化のコツ</h5>
+                            <ul class="list-disc list-inside text-sm">
+                                <li class="mb-2">小さな単位でテスト・検証を繰り返す</li>
+                                <li class="mb-2">成功パターンを素早く横展開する</li>
+                                <li class="mb-2">失敗から学び、同じ失敗を繰り返さない</li>
+                                <li>振り返りの頻度を上げる（週次など）</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-6">
+                    <h4 class="font-semibold text-red-800 mb-3">アクションプラン例</h4>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full bg-white border border-gray-200">
+                            <thead>
+                                <tr>
+                                    <th class="py-2 px-4 border-b text-left bg-gray-50">優先度</th>
+                                    <th class="py-2 px-4 border-b text-left bg-gray-50">課題</th>
+                                    <th class="py-2 px-4 border-b text-left bg-gray-50">改善策</th>
+                                    <th class="py-2 px-4 border-b text-left bg-gray-50">実施時期</th>
+                                    <th class="py-2 px-4 border-b text-left bg-gray-50">担当</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="py-2 px-4 border-b">高</td>
+                                    <td class="py-2 px-4 border-b">検索順位低下</td>
+                                    <td class="py-2 px-4 border-b">キーワード戦略の見直し、コンテンツ拡充</td>
+                                    <td class="py-2 px-4 border-b">即時〜1ヶ月</td>
+                                    <td class="py-2 px-4 border-b">SEO担当</td>
+                                </tr>
+                                <tr>
